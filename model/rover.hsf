@@ -1,0 +1,6 @@
+@message{
+    SU;LaneS;LaneF;LP;EB
+}
+@lifeline{
+    Rover1;Rover2;Rover3
+}

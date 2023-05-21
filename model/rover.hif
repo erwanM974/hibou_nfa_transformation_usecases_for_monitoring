@@ -1,0 +1,32 @@
+seq(
+	loopS(
+		seq(
+			loopS(
+				Rover1 -- SU -> (Rover2,Rover3)
+			),
+			LaneS -> Rover1,
+			loopS(
+				Rover1 -- EB -> (Rover2,Rover3)
+			),
+			LaneF -> Rover1
+		)
+	),
+	alt(
+		seq(
+			Rover1 -- LP -> (Rover2,Rover3),
+			loopS(
+				seq(
+					loopS(
+						Rover2 -- SU -> Rover3
+					),
+					LaneS -> Rover2,
+					loopS(
+						Rover2 -- EB -> Rover3
+					),
+					LaneF -> Rover2
+				)
+			)
+		),
+		o
+	)
+)

@@ -1,0 +1,6 @@
+@message{
+    addH;reqAH;reqH;ack;viewH;selJ;addW;jobC;pay
+}
+@lifeline{
+    E;W;Wi;Ei;CE;CJ
+}

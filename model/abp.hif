@@ -1,0 +1,60 @@
+loopS(
+seq(
+    d -> S,
+    loopS(
+        seq(
+            S -- d_zero -> K,
+            K -- ce -> R,
+            R -- one -> L,
+            alt(
+                L -- one -> S,
+                L -- ce -> S
+            )
+         )
+     ),
+     S -- d_zero -> K,
+     K -- d_zero -> R,
+     R -- d ->|,
+     loopS(
+         seq(
+            R -- zero -> L,
+            R -- ce -> S,
+            S -- d_zero -> K,
+            alt(
+                K -- d_zero -> R,
+                K -- ce -> R
+            )
+         )
+    ),
+    R -- zero -> L,
+    L -- zero -> S,
+    d -> S,
+    loopS(
+        seq(
+            S -- d_one -> K,
+            K -- ce -> R,
+            R -- zero -> L,
+            alt(
+                L -- zero -> S,
+                L -- ce -> S
+            )
+         )
+     ),
+     S -- d_one -> K,
+     K -- d_one -> R,
+     R -- d ->|,
+     loopS(
+         seq(
+            R -- one -> L,
+            R -- ce -> S,
+            S -- d_one -> K,
+            alt(
+                K -- d_one -> R,
+                K -- ce -> R
+            )
+         )
+    ),
+    R -- one -> L,
+    L -- one -> S
+)
+)

@@ -1,0 +1,8 @@
+@analyze_option{
+    strategy = DFS;
+    analysis_kind = simulate[slice = true, reset = true, multiply = false, loop max depth];
+    local_analysis = false;
+    goal = WeakPass;
+    priorities = [simu=-1];
+    memoize = false;
+}

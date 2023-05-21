@@ -1,0 +1,8 @@
+@analyze_option{
+    strategy = DFS;
+    analysis_kind = prefix;
+    local_analysis = false;
+    goal = WeakPass;
+    priorities = [simu=-1];
+    memoize = false;
+}

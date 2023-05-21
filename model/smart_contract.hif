@@ -1,0 +1,39 @@
+loopS(
+	seq(
+		par(
+			seq(
+				W -- addH -> Wi,
+				alt(
+					seq(
+						Wi -- reqAH -> CE,
+						CE -- ack -> Wi
+					),
+					o
+				),
+				Wi -- viewH -> E
+			),
+			seq(
+				E -- viewH -> Ei,
+				loopS(
+					Ei -- reqH -> CE
+				),
+				Ei -- viewH -> E 
+			)
+		),
+		E -- selJ -> Ei,
+		alt(
+			seq(
+				Ei -- addW -> CE,
+				alt(
+					seq(
+						Ei -- jobC -> CE,
+						CE -- pay -> CJ 
+					),
+					o
+				)
+			),
+			o
+		),
+		Ei -- ack -> E 
+	)
+)
